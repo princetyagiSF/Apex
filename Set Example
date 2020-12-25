@@ -1,0 +1,25 @@
+public class SetPractice {
+    public static void DecDev(){
+        try{
+            set<String> newstr = new set<String>();
+            newstr.add('prince.tyagi@cloudanalogy.com');
+            newstr.add('Prince Tyagi');
+            newstr.add('MCA');
+            newstr.add('MCA');
+            system.debug(newstr);
+            
+            Boolean isAman=newstr.contains('MCA');
+            Boolean isAmar=newstr.contains('MCAA');
+            system.debug('isAman'+isAman+'isAmar'+isAmar);
+            
+            System.debug('Size'+newstr.size());
+            
+          //  system.debug('Check Clear'+newstr.clear());
+            
+            //system.debug('Check Clear or not'+newstr.clear());
+        }
+        catch(exception exe){
+            system.debug('Exception Message'+exe.getMessage()+'Exception in line'+exe.getLineNumber());
+        }
+    }
+}
