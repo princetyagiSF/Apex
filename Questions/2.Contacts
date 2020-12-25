@@ -1,0 +1,23 @@
+//Create 10 Contacts with different Account(LookUp) values(Relationship) with no same 2 account in them.
+
+public class newContact {
+    public static void DecDev(){
+        try{
+            list <Account> accId=[select id from Account limit 10];
+            list<Contact> newcon=new list<Contact>();
+            integer i=0;
+            for(Account newacId: accId){
+                Contact con=new Contact();
+                con.LastName='New Contact'+i;
+                con.AccountId=newacId.Id;
+                i++;
+                newcon.add(con);
+			}
+            insert newcon;
+            system.debug(newcon);
+        }
+        catch(exception exe){
+            system.debug('Exception in message'+exe.getMessage()+'Exception in line'+exe.getLineNumber());
+        }
+    }
+}
